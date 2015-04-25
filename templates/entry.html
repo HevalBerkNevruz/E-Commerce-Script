@@ -1,0 +1,74 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+ <style>
+        table ul li a{
+            font-weight: bold;
+            font-size:15px;
+        }
+        table ul li{
+            margin-top:15px;
+        }
+        table ul li small{
+            font-size:11px;
+            color:#666666;
+        }
+    </style>
+    <div class="row">
+    <div class="list-group col-md-6" style="position: relative; left:30px;">
+        <p class="list-group-item disabled">
+            <strong>
+               Sitemize Hoşgeldiniz {{ name }} {{ surname }}
+            </strong>
+        </p>
+        <table>
+            <tr>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="#">Aldıklarım</a><br/>
+                            <small>Başarıyla sonuçlanan aldığınız veya sattığınız ürünler</small>
+                        </li>
+                        <li>
+                            <a href="#">İzlediklerim</a><br/>
+                            <small>İzlediğiniz ürünler</small>
+                        </li>
+                        <li>
+                            <a href="#">Satışlarım</a><br/>
+                            <small>Devam eden satışlarınız</small>
+                        </li>
+                        <li>
+                            <a href="#">Tekliflerim</a><br/>
+                            <small>Devam eden ve sonlanan teklifleriniz</small>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="#">Favorilerim</a><br/>
+                            <small>Kategorileriniz,Satıcılarınız</small>
+                        </li>
+                        <li>
+                            <a href="#">Hesaplarım</a><br/>
+                            <small>Banka hesabınız, fatura bilgileriniz</small>
+                        </li>
+                        <li>
+                            <a href="#">Mesajlarım</a><br/>
+                            <small>Gönderdiğiniz ve size gelen mesajlar</small>
+                        </li>
+                        <li>
+                            <a href="#">Ayarlarım</a><br/>
+                            <small>Hesap Ayarlarınız</small>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/" class="btn btn-primary">Anasayfaya Git</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>
+{% endblock %}

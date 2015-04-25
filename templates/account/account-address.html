@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <style>
+        a.address{
+            float: right;
+        }
+        .row{
+            width: 100%;
+        }
+        a[name=address]{
+            float: right;
+            margin-top: 5px;
+        }
+        table.address{
+            margin-top: 10px;
+            margin-left: 10px;
+            border:1px solid #999999;
+        }
+        table.address tr td,th{
+            margin-left: 5px;
+            padding: 5px;
+        }
+    </style>
+    {% include 'layouts/account-navbar.html' %}
+
+<div class="row">
+    <div class="list-group col-md-8" style="position: relative; left:30px;">
+        <p class="list-group-item disabled">
+            Adres Bilgileri
+        </p>
+        <a name="address" href="/adres-ekle/" class="btn btn-success">
+            Adres Ekle
+        </a>
+        <form action="" method="post">
+            <div class="row col-md-12">
+            <table class="address">
+                <tr>
+                    <th><h2>{{ address.address_header }}</h2></th>
+                </tr>
+                <tr>
+                    <td><strong>{{ address.name_surname }}</strong></td>
+                </tr>
+                <tr>
+                    <td>{{ address.address }}</td>
+                </tr>
+                <tr>
+                    <td>{{ address.post_code }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ address.county }},{{ address.city }}
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>{{ address.cell_phone }}</strong></td>
+                </tr>
+                {% if address.phone != "" %}
+                <tr>
+                    <td>{{ address.phone }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td>{{ address.identification_number }}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="address" href="/adres-duzenle/{{ id }}">Düzenle</a>
+                        <a class="address" href="/adres-sil/{{ id }}">Sil-</a>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

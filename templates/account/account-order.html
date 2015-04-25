@@ -1,0 +1,76 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+ <style>
+        table{
+            border-color: #D1D1D1;
+            width: 100%;
+            height: auto;
+        }
+        table tr th,td{
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+        a.btn{
+            width:105px;
+            text-align: center;
+        }
+    </style>
+    {% include 'layouts/account-navbar.html' %}
+     <div class="row">
+        <?php  include("account-navbar.php"); ?>
+        <div class="list-group col-md-8" style="position: relative; left:30px;">
+            <p class="list-group-item disabled">
+                Mevcut Sipariş
+            </p>
+            <table>
+                <tr>
+                    <th>Sipariş Kodu</th>
+                    <th>Ürün Bilgileri</th>
+                    <th>Notlar</th>
+                    <th>Adet</th>
+                    <th>Fiyat</th>
+                    <th>Kargo Ücreti</th>
+                    <th>Durum</th>
+                    <th co>Sipariş Tarihi</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            208251758762
+                        </a>
+                    </td>
+                    <td>
+                        <a href="">
+                        <img src="https://n11scdn.akamaized.net/a1/80/14/10/23/48/40/97/22/32/30/02/74/72/09074298900972454282.jpg"/>
+                            <p>SONY XPERIA Z2</p>
+                        </a>
+                        RENK:BEYAZ
+                    </td>
+                    <td>
+                        <a class="product-note" href=""><i class="fa fa-list-alt"></i> Ürün Notları</a>
+                    </td>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        1999 <i class="fa fa-try"></i>
+                    </td>
+                    <td>
+                        0 <i class="fa fa-try"></i>
+                    </td>
+                    <td>
+                        Teslim Edildi
+                    </td>
+                    <td>
+                        22/09/2014
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="">Ürün İade</a><br/><br/>
+                        <a class="btn btn-primary" href="">Ürün Değişim</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

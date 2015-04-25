@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <style>
+        table{
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        table tr td{
+            padding: 10px;
+        }
+        textarea{
+            resize: none;
+        }
+    </style>
+    {% include 'layouts/account-navbar.html' %}
+<div class="row">
+    <?php  include("account-navbar.php"); ?>
+    <div class="list-group col-md-8" style="position: relative; left:30px;">
+        <p class="list-group-item disabled">
+            Adres Ekle
+        </p>
+
+        <form action="/adres-ekle/" method="post">
+            {% csrf_token %}
+            <table>
+                {% for f in form %}
+                    <tr>
+                        <th>{{ f.label }}</th>
+                        <td>{{ f }}</td>
+                        <td style="color:red">
+                             {% if f.errors %}
+                                 {{ f.errors }}
+                             {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="2" align="right">
+                        <button type="submit" class="btn btn-success">Ekle</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+{% endblock %}

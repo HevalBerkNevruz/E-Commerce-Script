@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".navbar-nav li").hover(function(){
+            $(this).addClass("active");
+        },function(){
+            $(this).removeClass("active");
+        });
+        $("input[type=text],input[type=password],input[type=email]").addClass("form-control")
+    });
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">E-Commerce</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+            <ul class="nav navbar-nav">
+                {% if not "logged_in" in request.session %}
+                    <li><a href="/giris/">Giriş</a></li>
+                    <li><a href="/uye-ol/">Üye Ol</a></li>
+                {% else  %}
+                        <li><a href="#">Mesajlar <span class="badge">42</span></a>
+                        </li>
+                        <li><a href=""><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
+                        <li>
+                            <a href="/siparis/"><i class="fa fa-user"></i> Hesabım</a>
+                        </li>
+                        <li>
+                            <a href="/cikis/">
+                                <i class="fa fa-sign-out"></i>
+                                Çıkış
+                            </a>
+                        </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
